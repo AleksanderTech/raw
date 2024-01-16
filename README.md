@@ -1,3 +1,3 @@
 # Raw
 
-Bulding SPA without framework with web components.
+Building SPA without framework with web components.
