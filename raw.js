@@ -1,21 +1,9 @@
-globalThis.html = (strings, ...params) => {
-  params = params.map((param) => {
-    if (typeof param == "object") return btoa(JSON.stringify(param));
-    return param;
-  });
+globalThis.html = String.raw;
 
-  let result = "";
-  for (let i = 0; i < strings.length; i++) {
-    result += i + 1 == strings.length ? strings[i] : strings[i] + params[i];
-  }
-
-  return result;
-};
-
-export function parseObjAttribute(value) {
-    return JSON.parse(atob(value));
+export function base64ToObject(base64) {
+    return JSON.parse(atob(base64));
 }
 
-export function stringifyObjAttribute(value) {
-    return btoa(JSON.stringify(value));
+export function objectToBase64(object) {
+    return btoa(JSON.stringify(object));
 }
